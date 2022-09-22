@@ -4,71 +4,71 @@ namespace SalaryCalculator
 {
     internal class Program
     {
-        static void Main(string[] args)
+         static void Main(string[] args)
         {
             
-            //int BrutoSalary = 0;
+            
             Console.WriteLine("Enter Bruto Salary:");
-            int BrutoSalary =Convert.ToInt32( Console.ReadLine());
+            double brutoSalary =Convert.ToDouble( Console.ReadLine());
 
-            if (BrutoSalary <= 1200 && BrutoSalary >= 500)
+            if (brutoSalary <= 1200 && brutoSalary >= 500)
             {
-                Calc1(BrutoSalary);
+                Calc1(brutoSalary);
             }
 
-            if (BrutoSalary <= 2099 && BrutoSalary >= 1201)
+            if (brutoSalary <= 2099 && brutoSalary >= 1201)
             {
-                Calc2(BrutoSalary);
+                Calc2(brutoSalary);
             }
 
-            if (BrutoSalary >= 2100)
+            if (brutoSalary >= 2100)
             {
-                Calc3(BrutoSalary);
+                Calc3(brutoSalary);
             }
 
         }
 
-        static void Calc1(double BrutoSalary)
+        public static void Calc1(double brutoSalary)
         {
-            double pensionFond = BrutoSalary * 0.02;
+            double pensionFond = brutoSalary * 0.02;
 
-            double Insurance = BrutoSalary * 0.016;
+            double uneploymentTax = brutoSalary * 0.016;
 
-            double Tax = (BrutoSalary - 500 - pensionFond - Insurance) * 0.2;
+            double Tax = (brutoSalary - 500 - pensionFond - uneploymentTax) * 0.2;
 
-            double Calc1 = BrutoSalary - pensionFond - Insurance - Tax;
+            double Calc1 = brutoSalary - pensionFond - uneploymentTax - Tax;
 
-            Console.WriteLine("Your Neto Salary is = " + Calc1);
+            Console.WriteLine($"Your Neto Salary is: {Calc1}");
         }
 
-        static void Calc2(double BrutoSalary)
+        public static void Calc2(double brutoSalary)
 
         {
-            double pensionFond = BrutoSalary * 0.02;
+            double pensionFond = brutoSalary * 0.02;
 
-            double Insurance = BrutoSalary * 0.016;
+            double uneploymentTax = brutoSalary * 0.016;
 
-            double TaxFreeInCome = 500 - 0.55556 * (BrutoSalary - 1200);
+            double TaxFreeInCome = 500 - 0.55556 * (brutoSalary - 1200);
 
-            double Tax = (BrutoSalary - pensionFond - Insurance - TaxFreeInCome) * 0.2;
+            double Tax = (brutoSalary - pensionFond - uneploymentTax - TaxFreeInCome) * 0.2;
 
-            double Calc2 = BrutoSalary - pensionFond - Insurance - Tax;
+            double Calc2 = brutoSalary - pensionFond - uneploymentTax - Tax;
 
-            Console.WriteLine("Your Neto Salary is = " + Calc2);
+            Console.WriteLine($"Your Neto Salary is: {Calc2}");
         }
 
-        static void Calc3(double BrutoSalary)
+        public static void Calc3(double brutoSalary)
         {
 
-            double pensionFond = BrutoSalary * 0.02;
+            double pensionFond = brutoSalary * 0.02;
 
-            double Insurance = BrutoSalary * 0.016;
+            double uneploymentTax = brutoSalary * 0.016;
 
-            double Tax = BrutoSalary * 0.2;
+            double Tax = (brutoSalary - pensionFond -uneploymentTax  )* 0.2;
 
-            double Calc3 = BrutoSalary - pensionFond - Insurance - Tax;
+            double Calc3 = brutoSalary - pensionFond - uneploymentTax - Tax;
 
-            Console.WriteLine("Your Neto Salary is = " + Calc3);
+            Console.WriteLine($"Your Neto Salary is: {Calc3}");
         }
     }
 }
